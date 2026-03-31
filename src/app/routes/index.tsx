@@ -7,6 +7,8 @@ import RegisterPage from "../../features/auth/pages/RegisterPage";
 import { AdminGuard } from "../../features/auth/components/AdminGuard";
 import { HomePage } from "../../HomePage";
 import { AdminPage } from "../AdminPage";
+import ProductDetailPage from "../../features/products/pages/ProductDetailPage";
+import ProductListPage from "../../features/products/pages/ProductListPage";
 
 export const router = createBrowserRouter([
   {
@@ -33,5 +35,13 @@ export const router = createBrowserRouter([
   {
     path: "/register",
     element: <RegisterPage />,
+  },
+  {
+    path: "/",
+    element: <ProductListPage />,
+  },
+  {
+    path: "/products/:slug",
+    element: <ProductDetailPage />,
   },
 ]);
