@@ -5,6 +5,7 @@ import "./index.css";
 import { QueryProvider } from "./app/providers/QueryProvider.tsx";
 import { RouterProvider } from "react-router-dom";
 import { router } from "./app/routes";
+
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <QueryProvider>
