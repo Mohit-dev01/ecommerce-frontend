@@ -9,6 +9,9 @@ import { HomePage } from "../../HomePage";
 import { AdminPage } from "../AdminPage";
 import ProductDetailPage from "../../features/products/pages/ProductDetailPage";
 import ProductListPage from "../../features/products/pages/ProductListPage";
+import AdminCreateProductPage from "../../features/admin/products/pages/AdminCreateProductPage";
+import AdminProductListPage from "../../features/admin/products/pages/AdminProductListPage";
+import AdminCategoryPage from "../../features/admin/categories/pages/AdminCategoryPage";
 
 export const router = createBrowserRouter([
   {
@@ -43,5 +46,21 @@ export const router = createBrowserRouter([
   {
     path: "/products/:slug",
     element: <ProductDetailPage />,
+  },
+  {
+    path: "/admin/products",
+    element: <AdminProductListPage />,
+  },
+  {
+    path: "/admin/products/new",
+    element: <AdminCreateProductPage />,
+  },
+  {
+    path: "/admin/categories",
+    element: (
+      <AdminGuard>
+        <AdminCategoryPage />
+      </AdminGuard>
+    ),
   },
 ]);
